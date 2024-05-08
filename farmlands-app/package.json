@@ -9,13 +9,18 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@hugeicons/react-native-pro": "^0.1.7",
+    "@hugeicons/react-pro": "^0.3.1",
     "expo": "^51.0.0",
-    "expo-status-bar": "~1.11.1",
+    "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
-    "react-native": "0.73.6"
+    "react-native": "^0.74.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
