@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { AddCircleIcon } from '@hugeicons/react-native-pro';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView, Image, } from 'react-native';
+import HomeScreen from './screens/homeScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      {/* <br></br> */}
-      <Text>Hello World !</Text>
-      <Button
+    <ScrollView>
+      <View style={styles.container}>
+        {/* <Text>Open up App.js to start working on your app!</Text> */}
+        {/* <Text>Hello World !</Text> */}
+        {/* <Button
         onPress={() => {
           console.log('You tapped the button!');
         }}
@@ -17,15 +17,12 @@ export default function App() {
           width: 50,
           backgroundColor: 'black',
         }}
-      />
-      <Text>Made By Ungerer Hattingh</Text>
-      <AddCircleIcon
-        size={24}
-        color={"#000000"}
-        variant={"stroke"}
-      />
-      <StatusBar style="auto" />
-    </View>
+      /> */}
+        <HomeScreen></HomeScreen>
+        <Text>Made By Ungerer Hattingh</Text>
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
   );
 }
 
@@ -35,5 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    marginTop: 40,
   },
 });
