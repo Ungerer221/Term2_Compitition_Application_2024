@@ -3,18 +3,25 @@ import React from 'react'
 
 // Icons
 import { Home05Icon } from '@hugeicons/react-native-pro';
+import { Feather } from '@expo/vector-icons';
 
 
 // exported to : Home screen
 
 export default function TopMenuBar() {
     return (
-        <View>
+        <View style={styles.container}>
+            <Home05Icon
+                    size={32}
+                    color={"#000000"}
+                    variant={"stroke"}
+                />
+                <Feather name="home" size={24} color="black" />
             <View>
-                {/* <Image
+                <Image
                     style={styles.homeIcon}
-                    source={require('../assets/')}
-                /> */}
+                    source={require('../assets/homeIcon.svg')}
+                />
                 <Home05Icon
                     size={32}
                     color={"#000000"}
