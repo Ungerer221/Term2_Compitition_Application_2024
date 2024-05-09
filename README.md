@@ -72,7 +72,7 @@ For the status bar
 
 For React-Nativ
 ```
-    expo install react-native@0.74.1
+    npm install react-native@0.74.1
 ```
 
 ## Style Sheet
