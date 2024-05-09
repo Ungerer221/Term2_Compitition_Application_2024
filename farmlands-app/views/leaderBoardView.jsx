@@ -25,16 +25,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 22,
-        backgroundColor:'white',
+        backgroundColor: 'white',
         // shadow
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 9,
+            height: 5,
         },
-        shadowOpacity: 0.48,
-        shadowRadius: 11.95,
+        shadowOpacity: 0.36,
+        shadowRadius: 6.68,
 
-        elevation: 18,
+        elevation: 11,
     },
 });

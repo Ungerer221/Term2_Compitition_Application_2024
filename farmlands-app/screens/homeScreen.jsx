@@ -5,6 +5,7 @@ import React from 'react'
 import TopNavBar from '../views/topNavBar';
 import LeaderBoardView from '../views/leaderBoardView';
 import TotalScoreTile from '../views/totalScoreTile';
+import AboutUsView from '../views/aboutUsView';
 
 export default function HomeScreen() {
     return (
@@ -13,6 +14,7 @@ export default function HomeScreen() {
                 <TopNavBar></TopNavBar>
                 <LeaderBoardView></LeaderBoardView>
                 <TotalScoreTile></TotalScoreTile>
+                <AboutUsView></AboutUsView>
             </View>
         </ScrollView>
     )
