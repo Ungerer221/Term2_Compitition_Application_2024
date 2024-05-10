@@ -6,16 +6,17 @@ import { FontAwesome } from '@expo/vector-icons';
 export default function TotalScoreTile() {
     return (
         <View style={styles.container}>
-            <FontAwesome name="money" size={24} color="black" />
+            <FontAwesome name="money" size={24} color="white" />
             <Text style={styles.scoreText}>$00.00</Text>
-            <FontAwesome name="money" size={24} color="black" />
+            <FontAwesome name="money" size={24} color="white" />
         </View>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 0,
-        width: 350,
+        maxWidth: 310,
+        width:'100%',
         padding: 20,
         // backgroundColor:'black',
         alignItems: 'center',
@@ -23,13 +24,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: 1,
         borderStyle: 'dashed',
-        borderColor: 'black',
+        borderColor: 'white',
         borderRadius: 12,
         gap:10,
     },
     scoreText:{
         fontSize:24,
         fontWeight:'700',
-        color:'#F65774'
+        color:'#fff',
+        // backgroundColor:'red',
     }
 });

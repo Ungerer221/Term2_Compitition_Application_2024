@@ -47,8 +47,9 @@ const styles = StyleSheet.create({
         flex: 0,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#29C3CB',
-        padding: 10,
+        // backgroundColor: '#29C3CB',
+        // padding: 10,
+        paddingLeft:20,
         borderBottomRightRadius: 12,
     },
     nameText:{

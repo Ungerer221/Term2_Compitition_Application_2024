@@ -13,7 +13,7 @@ import NewsTab from '../views/newsTab';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // icons
-import { Home01Icon } from '@hugeicons/react-native-pro';
+// import { Home01Icon } from '@hugeicons/react-native-pro';
 
 export default function HomeScreen({ navigation }) {
     // could use abouve method (jumping to tabs) to creat our own custom navbar without the top bar
@@ -24,9 +24,9 @@ export default function HomeScreen({ navigation }) {
                 {/* <View style={styles.colorBlock02}></View> */}
                 <TopNavBar></TopNavBar>
                 {/* // todo : redesign Leader BOard and front panel for home screen */}
-                {/* <LeaderBoardView></LeaderBoardView> */}
+                <LeaderBoardView></LeaderBoardView>
                 {/* <Text style={styles.heading01}>your total score</Text> */}
-                <TotalScoreTile></TotalScoreTile>
+                {/* <TotalScoreTile></TotalScoreTile> */}
                 <Text style={styles.heading01}>Badges Earned</Text>
                 <BadgesTab></BadgesTab>
                 <GameTab></GameTab>
@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
                 <NewsTab></NewsTab>
                 <AboutUsView></AboutUsView>
                 <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
-                <Home01Icon />
+                {/* <Home01Icon /> */}
             </View>
         </ScrollView>
     )

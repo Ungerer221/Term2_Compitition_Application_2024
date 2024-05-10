@@ -20,6 +20,9 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer style={styles.container02}>
+      {/* the get rid of the top bar  try removing the <NavigationContainer>*/}
+      {/* https://reactnavigation.org/docs/bottom-tab-navigator/ */}
+      
       {/* Tab */}
       <Tab.Navigator
         screenOptions={({ route }) => ({
