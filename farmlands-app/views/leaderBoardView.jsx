@@ -18,7 +18,7 @@ export default function LeaderBoardView() {
 
 const styles = StyleSheet.create({
     container: {
-        width: 350,
+        width: 380,
         height: 170,
         // backgroundColor:'purple',
         flex: 0,
@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         backgroundColor: 'white',
         // shadow
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 0.36,
-        shadowRadius: 6.68,
+    //     shadowColor: "#000",
+    //     shadowOffset: {
+    //         width: 0,
+    //         height: 5,
+    //     },
+    //     shadowOpacity: 0.36,
+    //     shadowRadius: 6.68,
 
-        elevation: 11,
+    //     elevation: 11,
     },
 });

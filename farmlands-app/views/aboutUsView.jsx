@@ -1,10 +1,28 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image, } from 'react-native'
 import React from 'react'
+// components
+import MoreButton01 from '../components/moreButton01';
 
 export default function AboutUsView() {
     return (
         <View style={styles.container}>
-            <Text>aboutUsView</Text>
+            <View style={styles.container02}>
+                <View style={styles.textContainer}>
+                    <Text style={styles.heading01Text}>about Us</Text>
+                    <Text style={styles.paragraphText01}>
+                        Qorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos.
+                    </Text>
+                </View>
+                <MoreButton01 />
+                <Image
+                    style={styles.backGroundImage}
+                    source={require('../assets/24.png')}
+                />
+                <View style={styles.colorBlock01}></View>
+            </View>
         </View>
     )
 }
@@ -12,11 +30,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 0,
         width: 350,
-        height: 170,
+        height: 284,
         borderRadius: 22,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
+        // overflow:'hidden',
         // shadow
         shadowColor: "#000",
         shadowOffset: {
@@ -27,5 +46,52 @@ const styles = StyleSheet.create({
         shadowRadius: 6.68,
 
         elevation: 11,
+    },
+    container02: {
+        flex: 0,
+        width: 350,
+        height: 284,
+        borderRadius: 22,
+        overflow: 'hidden',
+        backgroundColor: '#fff',
+        // backgroundColor:'red',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        paddingTop: 20,
+    },
+    textContainer: {
+        flex: 0,
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        width: 302,
+    },
+    heading01Text: {
+        fontSize: 20,
+        fontWeight: '700',
+        textTransform: 'capitalize',
+    },
+    paragraphText01: {
+        fontSize: 14,
+        fontWeight: '400',
+    },
+    backGroundImage: {
+        width: 300,
+        height: 150,
+        // backgroundColor: 'blue',
+        zIndex: -2,
+        position: 'absolute',
+        bottom: -15,
+        left: -35,
+        // margin:'auto',
+    },
+    colorBlock01:{
+        width:200,
+        height:100,
+        backgroundColor:'#F65774',
+        position:'absolute',
+        right:-80,
+        top:-50,
+        transform: [{rotate: '45deg'}],
+        zIndex:-5,
     },
 });

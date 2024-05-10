@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.container02}>
       {/* Tab */}
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -62,4 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  container02:{
+    backgroundColor:'#82BF00'
+  }
 });

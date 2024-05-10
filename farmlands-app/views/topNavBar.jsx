@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet, Button, } from 'react-native'
 import React from 'react'
 
+
 // * Icons
 import { Feather } from '@expo/vector-icons';
 // import { Home05Icon } from '@hugeicons/react-native-pro';
@@ -16,8 +17,15 @@ export default function TopNavBar({ navigation }) {
                 <Button title="Go to Home" onPress={() => navigation.navigate('Game')} />
                 <Feather name="home" size={32} color="black" />
             </View> */}
-            <Feather name="home" size={32} color="black" />
-            <Feather name="menu" size={32} color="black" />
+            {/* <View style={styles.homeIconBlock}>
+                <Feather name="home" size={32} color="black" />
+            </View> */}
+            <View style={styles.homeIconBlock}>
+                <Text style={styles.nameText}>FarmLands</Text>
+            </View>
+            <View style={styles.menuIconBlock}>
+                <Feather name="menu" size={32} color="black" />
+            </View>
             {/* <Button title="Go to Game" onPress={() => navigation.navigate('Game')} /> */}
         </View>
     )
@@ -28,11 +36,31 @@ const styles = StyleSheet.create({
         flex: 0,
         width: '100%',
         // height:50,
-        padding: 20,
+        // padding: 20,
         backgroundColor: '#fff',
-        // backgroundColor:'red',
+        // backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
+    homeIconBlock: {
+        flex: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#29C3CB',
+        padding: 10,
+        borderBottomRightRadius: 12,
+    },
+    nameText:{
+        fontSize:32,
+        fontWeight:'700',
+    },
+    menuIconBlock: {
+        flex: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#29C3CB',
+        padding: 10,
+        borderBottomLeftRadius: 12,
+    }
 });
