@@ -91,3 +91,9 @@ this is a shadow generator for react native
 
 https://ethercreative.github.io/react-native-shadow-generator/ 
 
+## Installing SVG Compatability
+
+```
+    npm i react-native-svg
+    npm i react-native-svg-transformer
+```

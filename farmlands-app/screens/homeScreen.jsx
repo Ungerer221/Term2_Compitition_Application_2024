@@ -12,6 +12,8 @@ import NewsTab from '../views/newsTab';
 // the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// icons
+import { Home01Icon } from '@hugeicons/react-native-pro';
 
 export default function HomeScreen({ navigation }) {
     // could use abouve method (jumping to tabs) to creat our own custom navbar without the top bar
@@ -32,6 +34,7 @@ export default function HomeScreen({ navigation }) {
                 <NewsTab></NewsTab>
                 <AboutUsView></AboutUsView>
                 <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
+                <Home01Icon />
             </View>
         </ScrollView>
     )
