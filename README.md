@@ -47,6 +47,14 @@ npx expo start
 
 ### Inserting SVGs into your app
 
+https://dev.to/gautham495/how-to-use-svgs-in-react-native-37n9 
+
+```
+npm i react-native-svg
+npm i react-native-svg-transformer
+```
+> to install these packages
+
 https://docs.expo.dev/ui-programming/using-svgs/ 
 
 ```
@@ -54,6 +62,8 @@ https://docs.expo.dev/ui-programming/using-svgs/
 
     <Logo width={120} height={40} />;
 ```
+
+
 
 ### To Update your React-Nativ 
 
@@ -93,7 +103,3 @@ https://ethercreative.github.io/react-native-shadow-generator/
 
 ## Installing SVG Compatability
 
-```
-    npm i react-native-svg
-    npm i react-native-svg-transformer
-```
