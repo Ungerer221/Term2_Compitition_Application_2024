@@ -22,6 +22,7 @@ export default function HomeScreen({ navigation }) {
         <ScrollView >
             <View style={styles.container}>
                 {/* <View style={styles.colorBlock02}></View> */}
+                {/* <View style={styles.backgroundColorBlock02}></View> */}
                 <TopNavBar></TopNavBar>
                 {/* // todo : redesign Leader BOard and front panel for home screen */}
                 <LeaderBoardView></LeaderBoardView>
@@ -62,5 +63,12 @@ const styles = StyleSheet.create({
         fontSize:24,
         fontWeight:'700',
         textTransform:'capitalize',
+    },
+    backgroundColorBlock02:{
+        width:'100%',
+        height:440,
+        backgroundColor:'#FFD166',
+        position:'absolute',
+        top:0,
     }
 });

@@ -2,11 +2,12 @@ import { View, Text, Image, StyleSheet, Button, } from 'react-native'
 import React from 'react'
 
 
-// * Icons
+//  Icons
 import { Feather } from '@expo/vector-icons';
 // import { Home05Icon } from '@hugeicons/react-native-pro';
 // import Homeicon05 from '../assets/';
-// * the tab navigation import
+import MenuIcon from '../icons/menuIcon.svg'
+//  the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -24,7 +25,12 @@ export default function TopNavBar({ navigation }) {
                 <Text style={styles.nameText}>FarmLands</Text>
             </View>
             <View style={styles.menuIconBlock}>
-                <Feather name="menu" size={32} color="black" />
+                {/* <Feather name="menu" size={32} color="black" /> */}
+                <Image
+                    style={styles.icon32}
+                    source={require('../icons/menuIcon02.png')}
+                />
+                {/* <MenuIcon/> */}
             </View>
             {/* <Button title="Go to Game" onPress={() => navigation.navigate('Game')} /> */}
         </View>
@@ -37,7 +43,7 @@ const styles = StyleSheet.create({
         width: '100%',
         // height:50,
         // padding: 20,
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
         // backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -49,12 +55,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         // backgroundColor: '#29C3CB',
         // padding: 10,
-        paddingLeft:20,
+        paddingLeft: 20,
         borderBottomRightRadius: 12,
     },
-    nameText:{
-        fontSize:32,
-        fontWeight:'700',
+    nameText: {
+        fontSize: 32,
+        fontWeight: '700',
     },
     menuIconBlock: {
         flex: 0,
@@ -63,5 +69,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#29C3CB',
         padding: 10,
         borderBottomLeftRadius: 12,
+    },
+    icon32: {
+        width: 32,
+        height: 32,
     }
 });

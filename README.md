@@ -101,5 +101,11 @@ this is a shadow generator for react native
 
 https://ethercreative.github.io/react-native-shadow-generator/ 
 
-## Installing SVG Compatability
+## ISetting Up Images
 
+```
+<Image
+    style={styles.icon32}
+    source={require('../icons/menuIcon02.png')}
+/>
+```

@@ -3,19 +3,19 @@ import React from 'react'
 // icons
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function TotalScoreTile() {
+export default function TotalScoreBar() {
     return (
         <View style={styles.container}>
-            <FontAwesome name="money" size={24} color="white" />
+            <FontAwesome name="money" size={24} color="black" />
             <Text style={styles.scoreText}>$00.00</Text>
-            <FontAwesome name="money" size={24} color="white" />
+            <FontAwesome name="money" size={24} color="black" />
         </View>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 0,
-        maxWidth: 310,
+        maxWidth: 350,
         width: '100%',
         padding: 20,
         // backgroundColor:'black',
@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: 1,
         borderStyle: 'dashed',
-        borderColor: 'white',
+        borderColor: 'black',
         borderRadius: 12,
         gap: 10,
     },
     scoreText: {
         fontSize: 24,
         fontWeight: '700',
-        color: '#fff',
+        color: '#000',
         // backgroundColor:'red',
     }
 });

@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     },
     purpConMain: {
         width:'100%',
-        backgroundColor: '#A08BF6',
+        // backgroundColor: '#A08BF6',
+        backgroundColor:'#F65774',
         paddingBottom:20,
     },
     purpCon: {
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         // height:288,
-        backgroundColor: '#A08BF6',
+        // backgroundColor: '#A08BF6',
+        backgroundColor: '#F65774',
         // padding: 20,
         paddingTop: 20,
         paddingBottom: 20,
