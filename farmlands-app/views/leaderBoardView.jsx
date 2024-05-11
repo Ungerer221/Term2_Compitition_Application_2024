@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         backgroundColor: 'white',
         overflow: 'hidden',
+        borderWidth:5,
+        borderColor:'#fff',
     },
     purpConMain: {
         width:'100%',

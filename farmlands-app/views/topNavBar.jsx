@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         width: '100%',
         // height:50,
         // padding: 20,
-        // backgroundColor: '#fff',
+        backgroundColor: '#fff',
         // backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'space-between',

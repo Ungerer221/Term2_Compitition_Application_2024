@@ -16,39 +16,46 @@ export default function ProfileScreen() {
     // could try a view behind the scroll view to add background elements that arent affected by scroll
     <ScrollView >
       <View style={styles.container}>
+        {/* <View style={styles.colorBlock02}></View> */}
         <TopNavBar />
         {/* top section con */}
-        <View style={styles.profileTopSec}>
-          <ProfilePicMain></ProfilePicMain>
-
-          <View style={styles.userDataCon}>
-            <Text style={styles.userDataTitle}>the Users Name</Text>
-            <Text style={styles.userDataBio}>Person bio</Text>
-            <DateJoined></DateJoined>
-          </View>
-          {/* the backgroundimages */}
-          <View style={styles.backgroundImageRow}>
-            <Image
-              style={styles.backGroundImagePlant}
-              source={require('../assets/CactusVasenoLight.png')}
-            />
-            <Image
-              style={styles.backGroundImagePlant}
-              source={require('../assets/plantVase.png')}
-            />
+        <View style={styles.topSectionContainer}>
+          <View style={styles.profileTopSec}>
+            <ProfilePicMain></ProfilePicMain>
+            <View style={styles.userDataCon}>
+              <Text style={styles.userDataTitle}>the Users Name</Text>
+              <Text style={styles.userDataBio}>Person bio</Text>
+              <DateJoined></DateJoined>
+            </View>
+            {/* the backgroundimages */}
+            <View style={styles.backgroundImageRow}>
+              <Image
+                style={styles.backGroundImagePlant}
+                source={require('../assets/CactusVasenoLight.png')}
+              />
+              <Image
+                style={styles.backGroundImagePlant}
+                source={require('../assets/plantVase.png')}
+              />
+            </View>
           </View>
         </View>
         {/* top section con end */}
-        {/* divider bar */}
-        <DividerBar />
-        {/* Dashboard */}
-        <Text style={styles.dashboardTitle01}>Your Dashboard</Text>
-        <Text>your score</Text>
-        <TotalScoreBar />
-        <Text>LeaderBoard</Text>
-        <LeaderBoardView />
-        <Text>Stats</Text>
-        <StatsBoardView />
+        {/* Dashboard section */}
+        <View style={styles.dashBoardSection}>
+          <View style={styles.dasBoardSecContentCon}>
+            <Text style={styles.dashboardTitle01}>Your Dashboard</Text>
+            <Text style={styles.dashboardText01}>your score</Text>
+            <TotalScoreBar />
+            <View style={styles.dashBoardCon}>
+              <Text>LeaderBoard</Text>
+              <LeaderBoardView />
+              <Text style={styles.dashBoardSecText}>Stats</Text>
+              <DividerBar />
+              <StatsBoardView />
+            </View>
+          </View>
+        </View>
       </View>
     </ScrollView>
   )
@@ -61,8 +68,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    gap: 20,
+    // gap: 20,
+    // backgroundColor:'#ffd166',
     // backgroundColor:'red',
+  },
+  colorBlock02: {
+    backgroundColor: '#ffd166',
+    position: 'absolute',
+    width: '100%',
+    height: 311.5,
+  },
+  topSectionContainer: {
+    backgroundColor: '#ffd166',
+    width: '100%',
   },
   profileTopSec: {
     flex: 0,
@@ -70,7 +88,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     // backgroundColor: 'purple',
-    width: 193,
+    backgroundColor: '#fff',
+    width: '100%',
+    borderBottomLeftRadius: 40,
+    paddingBottom: 20,
+    paddingTop: 20,
+  },
+  dashBoardSection: {
+    backgroundColor: '#ffd166',
+    width: '100%',
+    padding: 20,
+    borderTopRightRadius: 80,
+    flex:0,
+    justifyContent:'center',
+    alignItems:'center',
   },
   userDataCon: {
     flex: 0,
@@ -96,8 +127,9 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '210%',
+    width: '100%',
     position: 'absolute',
+    zIndex: -3,
   },
   backGroundImagePlant: {
     height: 200,
@@ -106,5 +138,27 @@ const styles = StyleSheet.create({
   dashboardTitle01: {
     fontSize: 32,
     fontWeight: '700',
+  },
+  dashboardText01: {
+    fontWeight: '700',
+    fontSize: 16,
+    textTransform: 'capitalize',
+  },
+  dashBoardCon: {
+    flex: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 10,
+  },
+  dasBoardSecContentCon:{
+    // flex:0,
+    // justifyContent:'center',
+    // alignItems:'center',
+  },
+  dashBoardSecText:{
+    fontSize:18,
+    fontWeight:'700',
+    color:'black',
+    opacity:0.7,
   }
 });
