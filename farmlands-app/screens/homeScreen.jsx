@@ -14,6 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // icons
 // import { Home01Icon } from '@hugeicons/react-native-pro';
+import {Home01Icon} from '../icons/HomeIcon.jsx';
 
 export default function HomeScreen({ navigation }) {
     // could use abouve method (jumping to tabs) to creat our own custom navbar without the top bar
@@ -31,11 +32,12 @@ export default function HomeScreen({ navigation }) {
                     {/* <TotalScoreTile></TotalScoreTile> */}
                     <Text style={styles.heading01}>Badges Earned</Text>
                     <BadgesTab></BadgesTab>
+                    <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
                     <GameTab></GameTab>
                     <SeasonsEndTab></SeasonsEndTab>
                     <NewsTab></NewsTab>
                     <AboutUsView></AboutUsView>
-                    <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
+                    
                     {/* <Home01Icon /> */}
                 </View>
             </View>
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
         minHeight: 900,
         //   marginTop:60,
         paddingTop: 40,
+        paddingBottom:40,
         gap: 20,
     },
     home02Con:{

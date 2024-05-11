@@ -45,10 +45,11 @@ export default function ProfileScreen() {
         <View style={styles.dashBoardSection}>
           <View style={styles.dasBoardSecContentCon}>
             <Text style={styles.dashboardTitle01}>Your Dashboard</Text>
-            <Text style={styles.dashboardText01}>your score</Text>
+            <Text style={styles.dashboardText01}>Total Score today</Text>
             <TotalScoreBar />
             <View style={styles.dashBoardCon}>
-              <Text>LeaderBoard</Text>
+              <Text style={styles.dashBoardSecText}>LeaderBoard</Text>
+              <DividerBar/>
               <LeaderBoardView />
               <Text style={styles.dashBoardSecText}>Stats</Text>
               <DividerBar />
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     textAlign: 'center',
+    gap:5,
     // backgroundColor: 'red',
   },
   userDataTitle: {
@@ -139,11 +141,13 @@ const styles = StyleSheet.create({
   dashboardTitle01: {
     fontSize: 32,
     fontWeight: '700',
+    margin:'auto',
   },
   dashboardText01: {
     fontWeight: '700',
     fontSize: 16,
     textTransform: 'capitalize',
+    margin:'auto',
   },
   dashBoardCon: {
     flex: 0,
@@ -152,12 +156,14 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   dasBoardSecContentCon:{
+    paddingTop:20,
+    gap:20,
     // flex:0,
     // justifyContent:'center',
     // alignItems:'center',
   },
   dashBoardSecText:{
-    fontSize:18,
+    fontSize:24,
     fontWeight:'700',
     color:'black',
     opacity:0.7,

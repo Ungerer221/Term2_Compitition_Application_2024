@@ -4,6 +4,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 // components
 import HoursPlayedTab from '../components/hoursPlayedTab';
+import DividerBar from '../components/dividerBar';
 
 export default function StatsBoardView() {
   return (
@@ -13,7 +14,16 @@ export default function StatsBoardView() {
         <AntDesign name="dashboard" size={24} color="black" />
       </View>
       {/* hours played */}
-      <HoursPlayedTab/>
+      <HoursPlayedTab />
+      <DividerBar />
+      {/* Plants planted  */}
+      <View>
+        <Text></Text>
+        <View>
+          <Text></Text>
+
+        </View>
+      </View>
     </View>
   )
 }
@@ -29,15 +39,15 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 12,
   },
-  topRow:{
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'flex-start',
-    gap:5,
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    gap: 5,
   },
-  topRowText:{
-    fontSize:24,
-    fontWeight:'700',
-    textTransform:'capitalize',
+  topRowText: {
+    fontSize: 24,
+    fontWeight: '700',
+    textTransform: 'capitalize',
   }
 })

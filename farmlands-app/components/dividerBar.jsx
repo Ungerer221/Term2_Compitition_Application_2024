@@ -13,9 +13,10 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         height:2,
-        width:'85%',
+        width:'100%',
         backgroundColor:'black',
         opacity:0.25,
         borderRadius:10,
+        margin:'auto',
     }
 })

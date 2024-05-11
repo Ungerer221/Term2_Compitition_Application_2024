@@ -82,7 +82,7 @@ export default function App() {
           name="Game"
           component={GameScreen}
           options={{
-            tabBarLabel: 'Profile',
+            tabBarLabel: 'Game',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="controller-classic-outline" color={color} size={size} />
             ),
@@ -93,7 +93,7 @@ export default function App() {
           name="News"
           component={NewsScreen}
           options={{
-            tabBarLabel: 'Profile',
+            tabBarLabel: 'News',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
             ),

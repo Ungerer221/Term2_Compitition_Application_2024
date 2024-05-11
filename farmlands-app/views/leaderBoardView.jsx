@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, } from 'react-native'
+import { View, Text, StyleSheet,ScrollView } from 'react-native'
 // import React from 'react'
 import React, { useState } from 'react';
 // views
 import TotalScoreTile from './totalScoreTile';
 // icons
 import { AntDesign } from '@expo/vector-icons';
+// components
+import LeaderBoardDataRow from '../components/leaderBoardDataRow';
 
 export default function LeaderBoardView() {
 
@@ -33,7 +35,10 @@ export default function LeaderBoardView() {
                         </View>
                     </View>
                     <View style={styles.leaderBoardUserView}>
-
+                        <LeaderBoardDataRow />
+                        <LeaderBoardDataRow />
+                        <LeaderBoardDataRow />
+                        <LeaderBoardDataRow />
                     </View>
                 </View>
             </View>
@@ -44,7 +49,7 @@ export default function LeaderBoardView() {
 const styles = StyleSheet.create({
     container: {
         // width: '100%',
-        width:350,
+        width: 390,
         // height: 370,
         backgroundColor: 'red',
         flex: 0,
@@ -57,10 +62,10 @@ const styles = StyleSheet.create({
         // borderColor:'#fff',
     },
     purpConMain: {
-        width:'100%',
+        width: '100%',
         // backgroundColor: '#A08BF6',
-        backgroundColor:'#F65774',
-        paddingBottom:20,
+        backgroundColor: '#F65774',
+        paddingBottom: 20,
     },
     purpCon: {
         flex: 0,
@@ -82,13 +87,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
-        width: 350,
+        width: 390,
         position: 'relative',
         right: 18,
     },
     cirle: {
         // backgroundColor: "#fff",
-        backgroundColor:'#FFD166',
+        backgroundColor: '#FFD166',
         width: 38,
         height: 38,
         borderRadius: 50,
@@ -96,9 +101,9 @@ const styles = StyleSheet.create({
     line: {
         borderWidth: 1,
         borderStyle: 'dashed',
-        width: 310,
+        width: 350,
         // borderColor: "#fff",
-        borderColor:'#FFD166',
+        borderColor: '#FFD166',
     },
     leaderBoardTab: {
         width: '100%',
@@ -115,10 +120,13 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     leaderBoardUserView: {
-        backgroundColor: '#fff',
-        width: 320,
+        backgroundColor: '#CA3458',
+        width: '95%',
         height: 140,
         borderTopRightRadius: 22,
         borderBottomRightRadius: 22,
+        padding: 20,
+        gap:10,
+        overflow:'hidden',
     }
 });
