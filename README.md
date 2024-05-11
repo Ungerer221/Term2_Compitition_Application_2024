@@ -109,3 +109,35 @@ https://ethercreative.github.io/react-native-shadow-generator/
     source={require('../icons/menuIcon02.png')}
 />
 ```
+## Props dependency For inner shadow
+
+```
+npm install --save prop-types
+```
+
+## Inner shadow npm
+
+```
+npm i react-native-inset-shadow
+```
+
+https://www.npmjs.com/package/react-native-inset-shadow?activeTab=readme 
+
+### Usage
+
+```
+import InsetShadow from 'react-native-inset-shadow'
+import { Text, View } from 'react-native' 
+ 
+const ViewWithInsetShadow = () => {
+  return (
+    <View style={{ height: 150 }}>
+      <InsetShadow>
+        <View style={{ flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
+          <Text>This view has an inset shadow!</Text>
+        </View>
+      </InsetShadow>
+    </View>
+  )
+}
+```
