@@ -111,17 +111,19 @@ https://ethercreative.github.io/react-native-shadow-generator/
 ```
 ## Props dependency For inner shadow
 
+https://www.npmjs.com/package/prop-types
+
 ```
 npm install --save prop-types
 ```
 
 ## Inner shadow npm
 
+https://www.npmjs.com/package/react-native-inset-shadow?activeTab=readme 
+
 ```
 npm i react-native-inset-shadow
 ```
-
-https://www.npmjs.com/package/react-native-inset-shadow?activeTab=readme 
 
 ### Usage
 
