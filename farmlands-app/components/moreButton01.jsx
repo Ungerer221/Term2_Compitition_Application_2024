@@ -39,10 +39,6 @@ const styles = StyleSheet.create({
         paddingBottom:5,
         paddingLeft:10,
         paddingRight:10,
-        // positioning
-        position:'absolute',
-        right:-160,
-        bottom:-150,
         // depth
         zIndex:5,
     },

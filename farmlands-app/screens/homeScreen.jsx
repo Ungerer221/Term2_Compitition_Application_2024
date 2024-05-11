@@ -22,20 +22,22 @@ export default function HomeScreen({ navigation }) {
         <ScrollView >
             <View style={styles.container}>
                 {/* <View style={styles.colorBlock02}></View> */}
-                {/* <View style={styles.backgroundColorBlock02}></View> */}
+                <View style={styles.backgroundColorBlock02}></View>
                 <TopNavBar></TopNavBar>
                 {/* // todo : redesign Leader BOard and front panel for home screen */}
                 <LeaderBoardView></LeaderBoardView>
                 {/* <Text style={styles.heading01}>your total score</Text> */}
-                {/* <TotalScoreTile></TotalScoreTile> */}
-                <Text style={styles.heading01}>Badges Earned</Text>
-                <BadgesTab></BadgesTab>
-                <GameTab></GameTab>
-                <SeasonsEndTab></SeasonsEndTab>
-                <NewsTab></NewsTab>
-                <AboutUsView></AboutUsView>
-                <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
-                {/* <Home01Icon /> */}
+                <View style={styles.home02Con}>
+                    {/* <TotalScoreTile></TotalScoreTile> */}
+                    <Text style={styles.heading01}>Badges Earned</Text>
+                    <BadgesTab></BadgesTab>
+                    <GameTab></GameTab>
+                    <SeasonsEndTab></SeasonsEndTab>
+                    <NewsTab></NewsTab>
+                    <AboutUsView></AboutUsView>
+                    <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
+                    {/* <Home01Icon /> */}
+                </View>
             </View>
         </ScrollView>
     )
@@ -47,28 +49,44 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        minHeight:900,
+        minHeight: 900,
         //   marginTop:60,
+        paddingTop: 40,
         gap: 20,
     },
-    colorBlock02:{
-        position:'absolute',
-        top:-90,
+    home02Con:{
+        flex:0,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        gap: 20,
         width:'100%',
-        height:350,
-        borderRadius:200,
-        backgroundColor:'#F65774'
+        paddingTop: 20,
+        // backgroundColor:'#A08BF6',
+        backgroundColor:'white',
+        borderTopLeftRadius:40,
+        borderTopRightRadius:40,
     },
-    heading01:{
-        fontSize:24,
-        fontWeight:'700',
-        textTransform:'capitalize',
+    colorBlock02: {
+        position: 'absolute',
+        top: -90,
+        width: '100%',
+        height: 420,
+        borderRadius: 200,
+        backgroundColor: '#F65774'
     },
-    backgroundColorBlock02:{
-        width:'100%',
-        height:440,
-        backgroundColor:'#FFD166',
-        position:'absolute',
-        top:0,
+    heading01: {
+        fontSize: 24,
+        fontWeight: '700',
+        textTransform: 'capitalize',
+    },
+    backgroundColorBlock02: {
+        width: '100%',
+        // height: '26.5%',
+        height: '36.5%',
+        backgroundColor: '#FFD166',
+        position: 'absolute',
+        top: 0,
+        borderBottomLeftRadius: 22,
+        borderBottomRightRadius: 22,
     }
 });

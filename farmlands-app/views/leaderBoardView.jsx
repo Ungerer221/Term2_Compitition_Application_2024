@@ -43,7 +43,8 @@ export default function LeaderBoardView() {
 
 const styles = StyleSheet.create({
     container: {
-        width: 350,
+        // width: '100%',
+        width:350,
         // height: 370,
         backgroundColor: 'red',
         flex: 0,
@@ -52,8 +53,8 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         backgroundColor: 'white',
         overflow: 'hidden',
-        borderWidth:5,
-        borderColor:'#fff',
+        // borderWidth:5,
+        // borderColor:'#fff',
     },
     purpConMain: {
         width:'100%',
@@ -86,7 +87,8 @@ const styles = StyleSheet.create({
         right: 18,
     },
     cirle: {
-        backgroundColor: "#fff",
+        // backgroundColor: "#fff",
+        backgroundColor:'#FFD166',
         width: 38,
         height: 38,
         borderRadius: 50,
@@ -95,7 +97,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'dashed',
         width: 310,
-        borderColor: "#fff",
+        // borderColor: "#fff",
+        borderColor:'#FFD166',
     },
     leaderBoardTab: {
         width: '100%',

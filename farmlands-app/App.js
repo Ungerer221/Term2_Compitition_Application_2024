@@ -10,8 +10,11 @@ import TopNavBar from './views/topNavBar';
 // the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { getHeaderTitle } from '@react-navigation/elements';
 // Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 // Tab navigator
@@ -22,36 +25,81 @@ export default function App() {
     <NavigationContainer style={styles.container02}>
       {/* the get rid of the top bar  try removing the <NavigationContainer>*/}
       {/* https://reactnavigation.org/docs/bottom-tab-navigator/ */}
-      
+      {/* https://reactnavigation.org/docs/elements/#header */}
+      {/*  */}
+
       {/* Tab */}
       <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            // * remember you have the change the icon names
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'home-outline'
-                : 'home-outline';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'image-outline' : 'image-outline';
-            } else if (route.name === 'Game') {
-              iconName = focused ? 'game-controller-outline' : 'game-controller-outline';
-            }else if (route.name === 'News') {
-              iconName = focused ? 'newspaper-outline' : 'newspaper-outline';
-            }
+        screenOptions={{ headerShown: false }}
 
-            // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-        })}
+      // * old Methode
+      // screenOptions={({ route }) => ({
+      //   tabBarIcon: ({ focused, color, size }) => {
+      //     let iconName;
+      //     // * remember you have the change the icon names
+      //     if (route.name === 'Home') {
+      //       iconName = focused
+      //         ? 'home-outline'
+      //         : 'home-outline';
+      //     } else if (route.name === 'Profile') {
+      //       iconName = focused ? 'image-outline' : 'image-outline';
+      //     } else if (route.name === 'Game') {
+      //       iconName = focused ? 'game-controller-outline' : 'game-controller-outline';
+      //     }else if (route.name === 'News') {
+      //       iconName = focused ? 'newspaper-outline' : 'newspaper-outline';
+      //     }
+
+      //     // You can return any component that you like here!
+      //     return <Ionicons name={iconName} size={size} color={color} />;
+      //   },
+      //   tabBarActiveTintColor: 'tomato',
+      //   tabBarInactiveTintColor: 'gray',
+      // })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Game" component={GameScreen} />
-        <Tab.Screen name="News" component={NewsScreen} />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="account" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Game"
+          component={GameScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="controller-classic-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="News"
+          component={NewsScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
 
       </Tab.Navigator>
     </NavigationContainer>
@@ -65,7 +113,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  container02:{
-    backgroundColor:'#82BF00'
+  container02: {
+    backgroundColor: '#82BF00'
   }
 });

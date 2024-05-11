@@ -15,11 +15,13 @@ export default function BadgesTab() {
 const styles = StyleSheet.create({
   container: {
     flex: 0,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection:'row',
     width:350,
+    padding:20,
+    borderRadius:22,
   },
   container02: {
     backgroundColor: '#82BF00'

@@ -16,7 +16,9 @@ export default function AboutUsView() {
                         per inceptos himenaeos.
                     </Text>
                 </View>
-                <MoreButton01 />
+                <View style={styles.bottomRow}>
+                    <MoreButton01 />
+                </View>
                 <Image
                     style={styles.backGroundImage}
                     source={require('../assets/24.png')}
@@ -35,7 +37,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        // overflow:'hidden',
         // shadow
         shadowColor: "#000",
         shadowOffset: {
@@ -84,14 +85,23 @@ const styles = StyleSheet.create({
         left: -35,
         // margin:'auto',
     },
-    colorBlock01:{
-        width:200,
-        height:100,
-        backgroundColor:'#F65774',
-        position:'absolute',
-        right:-80,
-        top:-50,
-        transform: [{rotate: '45deg'}],
-        zIndex:-5,
+    colorBlock01: {
+        width: 200,
+        height: 100,
+        backgroundColor: '#F65774',
+        position: 'absolute',
+        right: -80,
+        top: -50,
+        transform: [{ rotate: '45deg' }],
+        zIndex: -5,
     },
+    bottomRow: {
+        width: '100%',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+        // backgroundColor:'red',
+        paddingRight:20,
+        position:'relative',
+        bottom:-110,
+    }
 });

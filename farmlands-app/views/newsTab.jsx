@@ -20,24 +20,22 @@ export default function NewsTab() {
           </View>
           <Ionicons name="bookmark-outline" size={24} color="black" />
         </View>
-        {/* middel */}
-        <View>
-          <Text>
-            Qorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-          </Text>
-        </View>
-        {/* bottom row */}
-        <View style={styles.bottomRow}>
-          {/* <MoreBtn02 /> */}
-          <MoreButton01 />
-        </View>
         {/* background */}
         <Image
           style={styles.backGroundImage}
           source={require('../assets/37.png')}
         />
+        {/* middel */}
+        <View style={styles.newsDescriptionBlock}>
+          <Text>
+            Here you will find all the latest happenings in the games development and enviroment. 
+            All future plans, Updates and discussions all in one place.
+          </Text>
+        </View>
+        {/* bottom row */}
+        <View style={styles.bottomRow}>
+          <MoreButton01 />
+        </View>
       </View>
     </View>
   )
@@ -46,12 +44,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 0,
     width: 350,
-    height: 284,
+    // height: 284,
     borderRadius: 22,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    // overflow:'hidden',
     // shadow
     shadowColor: "#000",
     shadowOffset: {
@@ -71,7 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     padding: 20,
     width: 350,
-    height: 284,
+    // height: 284,
     overflow: 'hidden',
   },
   topRow: {
@@ -95,8 +92,17 @@ const styles = StyleSheet.create({
   backGroundImage: {
     width: '100%',
     height: 270,
-    position: 'absolute',
-    bottom: -28,
-    zIndex: -5,
+    // position: 'absolute',
+    // bottom: -28,
+    // zIndex: -5,
+  },
+  newsDescriptionBlock:{
+    width:'100%',
+    padding:10,
+  },
+  bottomRow:{
+    width:'100%',
+    justifyContent:'flex-end',
+    alignItems:'flex-end',  
   }
 });

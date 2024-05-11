@@ -45,7 +45,7 @@ this is used for the default install method
 npx expo start
 ```
 
-### Inserting SVGs into your app
+## Inserting SVGs into your app
 
 https://dev.to/gautham495/how-to-use-svgs-in-react-native-37n9 
 
@@ -65,7 +65,7 @@ https://docs.expo.dev/ui-programming/using-svgs/
 
 
 
-### To Update your React-Nativ 
+# To Update your React-Nativ 
 
 ```
     # {{VERSION}} and {{REACT_VERSION}} are the release versions showing in the diff
@@ -85,7 +85,7 @@ For React-Nativ
     npm install react-native@0.74.1
 ```
 
-## Style Sheet
+# Style Sheet
 
 ```
 const styles = StyleSheet.create({
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 })
 ```
 
-## Shadow Generator
+# Shadow Generator
 this is a shadow generator for react native 
 > goes into the stylesheet object
 

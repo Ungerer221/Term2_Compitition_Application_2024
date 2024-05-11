@@ -10,14 +10,19 @@ export default function SeasonsEndTab() {
     <View style={styles.container}>
       {/* top row */}
       <View style={styles.topRow}>
-        <Text style={styles.heading01Text}>Seasons End</Text>
+        <Text style={styles.heading01Text}>Seasons End !</Text>
         <MaterialCommunityIcons name="sign-caution" size={24} color="black" />
       </View>
       {/* row 2 */}
       <View style={styles.textConatainer}>
         <Text style={styles.paragraphText01}>The season will end on 6th October, where the winner will be chosen.</Text>
-        <Text>You Have</Text>
+        {/* <Text>You Have</Text> */}
       </View>
+      {/* background */}
+      <Image
+        style={styles.backGroundImage}
+        source={require('../assets/393.png')}
+      />
       {/* bottom row */}
       <View style={styles.bottomRowCon}>
         <View style={styles.daysLeftTextCon}>
@@ -27,11 +32,6 @@ export default function SeasonsEndTab() {
         {/* more button here */}
         <MoreBtn02 />
       </View>
-      {/* background */}
-      <Image
-        style={styles.backGroundImage}
-        source={require('../assets/393.png')}
-      />
     </View>
   )
 }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     justifyContent: 'flex-start',
     gap: 10,
-    height: 172,
+    // height: 172,
     width: 350,
     borderRadius: 22,
     backgroundColor: '#fff',
@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
   },
   heading01Text: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: '700',
     textTransform: 'capitalize',
   },
   paragraphText01: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '400',
   },
   daysLeftTextCon: {
@@ -106,14 +106,14 @@ const styles = StyleSheet.create({
     width: "100%",
     position: 'relative',
   },
-  backGroundImage:{
-    width:250,
-    height:170,
-    position:'relative',
+  backGroundImage: {
+    width: 250,
+    height: 170,
+    // position: 'relative',
     // backgroundColor:'red',
-    margin:'auto',
-    top:-72,
-    zIndex:-5,
+    margin: 'auto',
+    // top: -72,
+    // zIndex: -5,
     // opacity:0.5,
   }
 });

@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    paddingTop:40,
     // gap: 20,
     // backgroundColor:'#ffd166',
     // backgroundColor:'red',
