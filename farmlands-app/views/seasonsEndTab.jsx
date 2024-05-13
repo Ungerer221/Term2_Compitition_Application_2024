@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, } from 'react-native'
 import React from 'react'
 // Icon
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Alert02Icon32 from '../icons/alert-02-stroke-rounded';
 // Components
 import MoreBtn02 from '../components/moreBtn02';
 
@@ -11,7 +12,8 @@ export default function SeasonsEndTab() {
       {/* top row */}
       <View style={styles.topRow}>
         <Text style={styles.heading01Text}>Seasons End !</Text>
-        <MaterialCommunityIcons name="sign-caution" size={24} color="black" />
+        {/* <MaterialCommunityIcons name="sign-caution" size={24} color="black" /> */}
+        <Alert02Icon32/>
       </View>
       {/* row 2 */}
       <View style={styles.textConatainer}>

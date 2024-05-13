@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     width:350,
     padding:20,
     borderRadius:22,
+    margin:'auto',
   },
   container02: {
     backgroundColor: '#82BF00'

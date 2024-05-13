@@ -2,6 +2,8 @@ import { View, Text, StyleSheet, } from 'react-native'
 import React from 'react'
 // icns
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 // components
 import HoursPlayedTab from '../components/hoursPlayedTab';
 import DividerBar from '../components/dividerBar';
@@ -17,11 +19,27 @@ export default function StatsBoardView() {
       <HoursPlayedTab />
       <DividerBar />
       {/* Plants planted  */}
-      <View>
-        <Text></Text>
-        <View>
-          <Text></Text>
-
+      <View style={styles.statsSubRow}>
+        <Text style={styles.statsDetailText}>Plants Planted</Text>
+        <View style={styles.statsSubRowDetail}>
+          <Text style={styles.statsDetailText}>45</Text>
+          <MaterialCommunityIcons name="leaf-circle-outline" size={24} color="black" />
+        </View>
+      </View>
+      {/* highest score  */}
+      <View style={styles.statsSubRow}>
+        <Text style={styles.statsDetailText}>Highest Score</Text>
+        <View style={styles.statsSubRowDetail}>
+          <Text style={styles.statsDetailText}>80000</Text>
+          <MaterialCommunityIcons name="progress-star" size={24} color="black" />
+        </View>
+      </View>
+      {/* Seasons PLayed  */}
+      <View style={styles.statsSubRow}>
+        <Text style={styles.statsDetailText}>seasons played</Text>
+        <View style={styles.statsSubRowDetail}>
+          <Text style={styles.statsDetailText}>8</Text>
+          <Ionicons name="leaf" size={24} color="black" />
         </View>
       </View>
     </View>
@@ -49,5 +67,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '700',
     textTransform: 'capitalize',
+  },
+  statsSubRow: {
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+  },
+  statsSubRowDetail: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  statsDetailText: {
+    fontSize: 16,
   }
 })

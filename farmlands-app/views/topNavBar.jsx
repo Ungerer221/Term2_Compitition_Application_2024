@@ -6,7 +6,7 @@ import React from 'react'
 import { Feather } from '@expo/vector-icons';
 // import { Home05Icon } from '@hugeicons/react-native-pro';
 // import Homeicon05 from '../assets/';
-import MenuIcon from '../icons/menuIcon.svg'
+import MenuSquareIcon from '../icons/menuSquareIcon';
 //  the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -14,10 +14,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function TopNavBar({ navigation }) {
     return (
         <View style={styles.container}>
-            {/* <View>
-                <Button title="Go to Home" onPress={() => navigation.navigate('Game')} />
-                <Feather name="home" size={32} color="black" />
-            </View> */}
             {/* <View style={styles.homeIconBlock}>
                 <Feather name="home" size={32} color="black" />
             </View> */}
@@ -25,12 +21,7 @@ export default function TopNavBar({ navigation }) {
                 <Text style={styles.nameText}>FarmLands</Text>
             </View>
             <View style={styles.menuIconBlock}>
-                {/* <Feather name="menu" size={32} color="black" /> */}
-                <Image
-                    style={styles.icon32}
-                    source={require('../icons/menuIcon02.png')}
-                />
-                {/* <MenuIcon/> */}
+                <MenuSquareIcon />
             </View>
             {/* <Button title="Go to Game" onPress={() => navigation.navigate('Game')} /> */}
         </View>

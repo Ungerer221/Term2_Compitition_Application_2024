@@ -22,7 +22,7 @@ export default function HoursPlayedTab() {
 const styles = StyleSheet.create({
     container: {
         flexDirection:'row',
-        maxWidth:310,
+        maxWidth:350,
         justifyContent:'space-between',
         width: '100%',
         // backgroundColor: '#fff',
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     hourDetailsHighlight:{
         backgroundColor:'#82BF00',
         padding:4,
-        borderRadius:4,
+        borderRadius:6,
     },
     hourDetailsHighlightText:{
         color:'white',

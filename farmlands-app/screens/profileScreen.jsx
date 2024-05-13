@@ -10,6 +10,7 @@ import DividerBar from '../components/dividerBar';
 import TotalScoreBar from '../views/totalScoreBar';
 import LeaderBoardView from '../views/leaderBoardView';
 import StatsBoardView from '../views/statsBoardView';
+import BadgesTab from '../views/badgesTab';
 
 export default function ProfileScreen() {
   return (
@@ -48,8 +49,9 @@ export default function ProfileScreen() {
             <Text style={styles.dashboardText01}>Total Score today</Text>
             <TotalScoreBar />
             <View style={styles.dashBoardCon}>
+              <BadgesTab />
               <Text style={styles.dashBoardSecText}>LeaderBoard</Text>
-              <DividerBar/>
+              <DividerBar />
               <LeaderBoardView />
               <Text style={styles.dashBoardSecText}>Stats</Text>
               <DividerBar />
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingTop:40,
+    paddingTop: 40,
     // gap: 20,
     // backgroundColor:'#ffd166',
     // backgroundColor:'red',
@@ -101,9 +103,9 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 20,
     borderTopRightRadius: 80,
-    flex:0,
-    justifyContent:'center',
-    alignItems:'center',
+    flex: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   userDataCon: {
     flex: 0,
@@ -111,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     textAlign: 'center',
-    gap:5,
+    gap: 5,
     // backgroundColor: 'red',
   },
   userDataTitle: {
@@ -141,13 +143,13 @@ const styles = StyleSheet.create({
   dashboardTitle01: {
     fontSize: 32,
     fontWeight: '700',
-    margin:'auto',
+    margin: 'auto',
   },
   dashboardText01: {
     fontWeight: '700',
     fontSize: 16,
     textTransform: 'capitalize',
-    margin:'auto',
+    margin: 'auto',
   },
   dashBoardCon: {
     flex: 0,
@@ -155,17 +157,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 10,
   },
-  dasBoardSecContentCon:{
-    paddingTop:20,
-    gap:20,
+  dasBoardSecContentCon: {
+    paddingTop: 20,
+    gap: 20,
     // flex:0,
     // justifyContent:'center',
     // alignItems:'center',
   },
-  dashBoardSecText:{
-    fontSize:24,
-    fontWeight:'700',
-    color:'black',
-    opacity:0.7,
+  dashBoardSecText: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: 'black',
+    opacity: 0.7,
   }
 });
