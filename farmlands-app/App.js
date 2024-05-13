@@ -16,6 +16,7 @@ import { getHeaderTitle } from '@react-navigation/elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import SignUpScreen from './screens/signUpScreen';
 
 
 // Tab navigator
@@ -115,6 +116,17 @@ export default function App() {
           component={NewsScreen}
           options={{
             tabBarLabel: 'News',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Signup"
+          component={SignUpScreen}
+          options={{
+            tabBarLabel: 'Signup',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
             ),
