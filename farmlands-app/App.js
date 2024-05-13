@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, } from 'react-native';
+import React, { useState } from 'react';
 //Screen Imports
 import HomeScreen from './screens/homeScreen';
 import ProfileScreen from './screens/profileScreen';
@@ -25,12 +26,28 @@ const STYLES = ['default', 'dark-content', 'light-content'];
 const TRANSITIONS = ['fade', 'slide', 'none'];
 
 export default function App() {
+
+  const [hidden, setHidden] = useState(false);
+  const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
+  const [statusBarTransition, setStatusBarTransition] = useState(
+    TRANSITIONS[0],
+  );
+
   return (
+
     <NavigationContainer style={styles.container02}>
       {/* the get rid of the top bar  try removing the <NavigationContainer>*/}
       {/* https://reactnavigation.org/docs/bottom-tab-navigator/ */}
       {/* https://reactnavigation.org/docs/elements/#header */}
       {/*  */}
+
+      <StatusBar
+        animated={true}
+        backgroundColor="black"
+        barStyle={statusBarStyle}
+        showHideTransition={statusBarTransition}
+        hidden={false}
+      />
 
       {/* Tab */}
       <Tab.Navigator
