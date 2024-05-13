@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, } from 'react-native';
 //Screen Imports
 import HomeScreen from './screens/homeScreen';
 import ProfileScreen from './screens/profileScreen';
@@ -19,6 +19,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 // Tab navigator
 const Tab = createBottomTabNavigator();
+
+// Staus Bar Styling const
+const STYLES = ['default', 'dark-content', 'light-content'];
+const TRANSITIONS = ['fade', 'slide', 'none'];
 
 export default function App() {
   return (

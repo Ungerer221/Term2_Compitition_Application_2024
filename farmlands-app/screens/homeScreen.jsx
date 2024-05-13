@@ -1,20 +1,24 @@
-import { View, Text, ScrollView, StyleSheet, Button, } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Button, Image, ImageBackground } from 'react-native'
 import React from 'react'
 // views
 import TopNavBar from '../views/topNavBar';
 import LeaderBoardView from '../views/leaderBoardView';
 import TotalScoreTile from '../views/totalScoreTile';
 import AboutUsView from '../views/aboutUsView';
-import GameTab from '../views/gameTab';
 import BadgesTab from '../views/badgesTab';
 import SeasonsEndTab from '../views/seasonsEndTab';
 import NewsTab from '../views/newsTab';
+import GameNavTab from '../views/gameNavTab.jsx';
 // the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // icons
+import TractorIcon32 from '../icons/tractor-stroke-rounded.jsx';
 // import { Home01Icon } from '@hugeicons/react-native-pro';
-import {Home01Icon} from '../icons/HomeIcon.jsx';
+import { Home01Icon } from '../icons/HomeIcon.jsx';
+// import { showErrorCSS } from 'react-native-svg/lib/typescript/deprecated.js';
+// images
+
 
 export default function HomeScreen({ navigation }) {
     // could use abouve method (jumping to tabs) to creat our own custom navbar without the top bar
@@ -32,12 +36,36 @@ export default function HomeScreen({ navigation }) {
                     {/* <TotalScoreTile></TotalScoreTile> */}
                     <Text style={styles.heading01}>Badges Earned</Text>
                     <BadgesTab></BadgesTab>
-                    <Button title="Go to Game" onPress={() => navigation.navigate('Game')} />
-                    <GameTab></GameTab>
+                    {/* // todo : see if you can make the a touchable */}
+                    <View style={styles.gameNavTabCon}>
+                        {/* nav button  */}
+                        <View style={styles.gameNavBTN}>
+                            <Button
+                                title="Your Farm"
+                                onPress={() => navigation.navigate('Game')}
+                            />
+                            <TractorIcon32 />
+                        </View>
+                        <View>
+                            <Image
+                                style={styles.shopIllustration}
+                                source={require('../assets/ShopIllustration01.png')}
+                            />
+                        </View>
+                        <View>
+                            <Image
+                                style={styles.pavIllustration}
+                                source={require('../assets/pavemantill.png')}
+                            />
+                        </View>
+                        <ImageBackground source={require('../assets/DirtBackground021.png')} resizeMode="cover" style={styles.gameBackgroundImage}>
+                        </ImageBackground>
+                    </View>
+                    <GameNavTab />
                     <SeasonsEndTab></SeasonsEndTab>
                     <NewsTab></NewsTab>
                     <AboutUsView></AboutUsView>
-                    
+
                     {/* <Home01Icon /> */}
                 </View>
             </View>
@@ -54,20 +82,20 @@ const styles = StyleSheet.create({
         minHeight: 900,
         //   marginTop:60,
         paddingTop: 40,
-        paddingBottom:40,
+        paddingBottom: 40,
         gap: 20,
     },
-    home02Con:{
-        flex:0,
+    home02Con: {
+        flex: 0,
         alignItems: 'center',
         justifyContent: 'flex-start',
         gap: 20,
-        width:'100%',
+        width: '100%',
         paddingTop: 20,
         // backgroundColor:'#A08BF6',
-        backgroundColor:'white',
-        borderTopLeftRadius:40,
-        borderTopRightRadius:40,
+        backgroundColor: 'white',
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
     },
     colorBlock02: {
         position: 'absolute',
@@ -91,5 +119,44 @@ const styles = StyleSheet.create({
         top: 0,
         borderBottomLeftRadius: 22,
         borderBottomRightRadius: 22,
+    },
+    // game atb
+    gameNavTabCon: {
+        width: '100%',
+        maxWidth: 350,
+        minHeight: 138,
+        flex: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // backgroundColor: 'purple',
+        borderRadius: '22',
+        overflow: 'hidden',
+        borderWidth: 2,
+        borderColor: '#000',
+    },
+    shopIllustration: {
+        position: 'absolute',
+        left: -170,
+        bottom: -43,
+        zIndex: -5,
+    },
+    pavIllustration: {
+        position: 'absolute',
+        bottom: -50,
+        left: -200,
+        zIndex: -5,
+    },
+    gameBackgroundImage: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        zIndex: -10,
+    },
+    gameNavBTN:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        zIndex:5,
     }
 });

@@ -2,6 +2,8 @@ import { View, Text, StyleSheet, Image, } from 'react-native'
 import React from 'react'
 // Icons
 import { Ionicons } from '@expo/vector-icons';
+import Bookmark02Icon32 from '../icons/bookmark-02-stroke-rounded';
+import News01Icon24 from '../icons/news-01-stroke-rounded';
 // componenets
 import MoreBtn02 from '../components/moreBtn02';
 import MoreButton01 from '../components/moreButton01';
@@ -16,9 +18,11 @@ export default function NewsTab() {
           {/* title text */}
           <View style={styles.titleTextCon}>
             <Text style={styles.titleText}>News</Text>
-            <Ionicons name="newspaper-outline" size={24} color="black" />
+            {/* <Ionicons name="newspaper-outline" size={24} color="black" /> */}
+            <News01Icon24 />
           </View>
-          <Ionicons name="bookmark-outline" size={24} color="black" />
+          {/* <Ionicons name="bookmark-outline" size={24} color="black" /> */}
+          <Bookmark02Icon32 />
         </View>
         {/* background */}
         <Image
@@ -28,7 +32,7 @@ export default function NewsTab() {
         {/* middel */}
         <View style={styles.newsDescriptionBlock}>
           <Text>
-            Here you will find all the latest happenings in the games development and enviroment. 
+            Here you will find all the latest happenings in the games development and enviroment.
             All future plans, Updates and discussions all in one place.
           </Text>
         </View>
@@ -96,13 +100,13 @@ const styles = StyleSheet.create({
     // bottom: -28,
     // zIndex: -5,
   },
-  newsDescriptionBlock:{
-    width:'100%',
-    padding:10,
+  newsDescriptionBlock: {
+    width: '100%',
+    padding: 10,
   },
-  bottomRow:{
-    width:'100%',
-    justifyContent:'flex-end',
-    alignItems:'flex-end',  
+  bottomRow: {
+    width: '100%',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   }
 });
