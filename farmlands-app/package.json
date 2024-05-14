@@ -11,7 +11,9 @@
   "dependencies": {
     "@hugeicons/react-native-pro": "^0.1.7",
     "@react-navigation/bottom-tabs": "^6.5.20",
-    "expo": "^51.0.2",
+    "@react-navigation/drawer": "^6.6.15",
+    "@react-navigation/native": "^6.1.17",
+    "expo": "^51.0.5",
     "expo-status-bar": "~1.12.1",
     "firebase": "^10.11.1",
     "prop-types": "^15.8.1",

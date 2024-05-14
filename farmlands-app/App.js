@@ -50,6 +50,12 @@ export default function App() {
         hidden={false}
       />
 
+      {/* drawer navigation */}
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+      </Drawer.Navigator>
+
       {/* Tab */}
       <Tab.Navigator
         screenOptions={{ headerShown: false }}
