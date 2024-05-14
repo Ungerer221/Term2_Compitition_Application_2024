@@ -9,6 +9,7 @@ import BadgesTab from '../views/badgesTab';
 import SeasonsEndTab from '../views/seasonsEndTab';
 import NewsTab from '../views/newsTab';
 import GameNavTab from '../views/gameNavTab.jsx';
+import EnrollCompView from '../views/enrollCompView.jsx';
 // the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -29,8 +30,9 @@ export default function HomeScreen({ navigation }) {
                 {/* <View style={styles.colorBlock02}></View> */}
                 <View style={styles.backgroundColorBlock02}></View>
                 <TopNavBar></TopNavBar>
-                {/* // todo : redesign Leader BOard and front panel for home screen */}
+                {/* <Text style={styles.homeIntroTitleText}>Welcome</Text> */}
                 <LeaderBoardView></LeaderBoardView>
+                <EnrollCompView/>
                 {/* <Text style={styles.heading01}>your total score</Text> */}
                 <View style={styles.home02Con}>
                     {/* <TotalScoreTile></TotalScoreTile> */}
@@ -85,6 +87,10 @@ const styles = StyleSheet.create({
         paddingBottom: 40,
         gap: 20,
     },
+    homeIntroTitleText:{
+        fontWeight:'700',
+        fontSize:32,
+    },
     home02Con: {
         flex: 0,
         alignItems: 'center',
@@ -101,7 +107,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: -90,
         width: '100%',
-        height: 420,
+        height: 520,
         borderRadius: 200,
         backgroundColor: '#F65774'
     },
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColorBlock02: {
         width: '100%',
         // height: '26.5%',
-        height: '36.5%',
+        height: '100%',
         backgroundColor: '#FFD166',
         position: 'absolute',
         top: 0,

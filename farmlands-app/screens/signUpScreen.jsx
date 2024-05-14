@@ -4,21 +4,10 @@ import React, { useState } from 'react';
 // views
 import TopNavBar from '../views/topNavBar';
 // firebase
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-// * Firebase Auth Code
-// const auth = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-// .then((userCredential) => {
-//     // Signed up 
-//     const user = userCredential.user;
-//     // ...
-// })
-// .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-// });
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// componenets
+import PasswordInputField from '../components/passwordInputField';
+import EmailInputField from '../components/emailInputField';
 
 // todo : make the sign up screen part of the drawer navigation for the menu button
 export default function SignUpScreen() {
@@ -30,20 +19,8 @@ export default function SignUpScreen() {
         <View style={styles.container}>
             <TopNavBar />
             <View style={styles.formCon}>
-                <TextInput
-                    style={styles.input}
-                    placeholder='email here'
-                    onChangeText={onChangeText}
-                    value={text}
-                    autoComplete='email'
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder='Password'
-                    onChangeText={onChangeText}
-                    value={text}
-                    autoComplete='email'
-                />
+                <EmailInputField/>
+                <PasswordInputField/>
                 <TouchableOpacity>
 
                 </TouchableOpacity>
