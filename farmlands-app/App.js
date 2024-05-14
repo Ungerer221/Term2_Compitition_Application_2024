@@ -1,3 +1,6 @@
+// * keep eye on this
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, } from 'react-native';
 import React, { useState } from 'react';
@@ -8,24 +11,44 @@ import GameScreen from './screens/gameScreen';
 import NewsScreen from './screens/newsScreen';
 // views
 import TopNavBar from './views/topNavBar';
-// the tab navigation import
+// Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getHeaderTitle } from '@react-navigation/elements';
+// * keep eye on this
+import { createStackNavigator } from '@react-navigation/stack';
+
 // Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SignUpScreen from './screens/signUpScreen';
 
-
-// Tab navigator
+// * Tab navigator ---
 const Tab = createBottomTabNavigator();
+function TabNavigator() {
+  return (
+    <Tab.Navigator>
+      {/* Define your tab screens */}
+    </Tab.Navigator>
+  );
+}
+// * stack navigation ---
+const Stack = createStackNavigator();
+function StackNavigator() {
+  return (
+    <Stack.Navigator>
+      {/* Define your stack screens */}
+      <Stack.Screen name="Signup" component={SignUpScreen} />
+    </Stack.Navigator>
+  );
+}
 
-// Staus Bar Styling const
+// Staus Bar Styling const ---
 const STYLES = ['default', 'dark-content', 'light-content'];
 const TRANSITIONS = ['fade', 'slide', 'none'];
 
+// * The export defualt ---------------------------------------------------------------------------------------------------------------------
 export default function App() {
 
   const [hidden, setHidden] = useState(false);
@@ -50,11 +73,14 @@ export default function App() {
         hidden={false}
       />
 
-      {/* drawer navigation */}
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
+      {/* // todo : Make a stack navigation for the login and signup screen*/}
+      {/* //! error pops up that you have multiply navigations in the one navigation container */}
+      {/* <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Signup" component={SignUpScreen} />
+      </Stack.Navigator> */}
+      
 
       {/* Tab */}
       <Tab.Navigator

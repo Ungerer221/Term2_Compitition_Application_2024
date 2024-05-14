@@ -1,16 +1,11 @@
 import { View, Text, Image, StyleSheet, Button, } from 'react-native'
 import React from 'react'
-
-
 //  Icons
 import { Feather } from '@expo/vector-icons';
-// import { Home05Icon } from '@hugeicons/react-native-pro';
-// import Homeicon05 from '../assets/';
 import MenuSquareIcon from '../icons/menuSquareIcon';
 //  the tab navigation import
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import { useDrawerStatus } from '@react-navigation/drawer';
 
 export default function TopNavBar({ navigation }) {
     return (
@@ -22,9 +17,10 @@ export default function TopNavBar({ navigation }) {
                 <Text style={styles.nameText}>FarmLands</Text>
             </View>
             <View style={styles.menuIconBlock}>
-                <MenuSquareIcon
+                <MenuSquareIcon 
+                // this only works on the screens
+                    onPress={() => navigation.navigate('Signup')}
                 />
-
             </View>
             {/* <Button title="Go to Game" onPress={() => navigation.navigate('Game')} /> */}
         </View>
