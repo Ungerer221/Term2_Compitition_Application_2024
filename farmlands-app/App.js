@@ -17,19 +17,73 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getHeaderTitle } from '@react-navigation/elements';
 // * keep eye on this
 import { createStackNavigator } from '@react-navigation/stack';
-
 // Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SignUpScreen from './screens/signUpScreen';
+// IMPORT ENDS ----------------------------------------------------------------------------------------------------------------------------
 
-// * Tab navigator ---
+// * Tab navigator ------------------------------------------------------------------------------------------------------------------------
 const Tab = createBottomTabNavigator();
 function TabNavigator() {
   return (
     <Tab.Navigator>
-      {/* Define your tab screens */}
+      {/* <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="account" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Game"
+          component={GameScreen}
+          options={{
+            tabBarLabel: 'Game',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="controller-classic-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="News"
+          component={NewsScreen}
+          options={{
+            tabBarLabel: 'News',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Signup"
+          component={SignUpScreen}
+          options={{
+            tabBarLabel: 'Signup',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        /> */}
     </Tab.Navigator>
   );
 }
@@ -48,15 +102,14 @@ function StackNavigator() {
 const STYLES = ['default', 'dark-content', 'light-content'];
 const TRANSITIONS = ['fade', 'slide', 'none'];
 
-// * The export defualt ---------------------------------------------------------------------------------------------------------------------
+// * The export defualt -------------------------------------------------------------------------------------------------------------------
 export default function App() {
-
   const [hidden, setHidden] = useState(false);
   const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
   const [statusBarTransition, setStatusBarTransition] = useState(
     TRANSITIONS[0],
   );
-
+  // the return ---------------------------------------------------------------------------------------------------------------------------
   return (
 
     <NavigationContainer style={styles.container02}>
@@ -73,42 +126,35 @@ export default function App() {
         hidden={false}
       />
 
-      {/* // todo : Make a stack navigation for the login and signup screen*/}
-      {/* //! error pops up that you have multiply navigations in the one navigation container */}
       {/* <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="Signup" component={SignUpScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
       </Stack.Navigator> */}
-      
 
+      {/* // todo : Make a stack navigation for the login and signup screen*/}
       {/* Tab */}
       <Tab.Navigator
         screenOptions={{ headerShown: false }}
-
-      // * old Methode
-      // screenOptions={({ route }) => ({
-      //   tabBarIcon: ({ focused, color, size }) => {
-      //     let iconName;
-      //     // * remember you have the change the icon names
-      //     if (route.name === 'Home') {
-      //       iconName = focused
-      //         ? 'home-outline'
-      //         : 'home-outline';
-      //     } else if (route.name === 'Profile') {
-      //       iconName = focused ? 'image-outline' : 'image-outline';
-      //     } else if (route.name === 'Game') {
-      //       iconName = focused ? 'game-controller-outline' : 'game-controller-outline';
-      //     }else if (route.name === 'News') {
-      //       iconName = focused ? 'newspaper-outline' : 'newspaper-outline';
-      //     }
-
-      //     // You can return any component that you like here!
-      //     return <Ionicons name={iconName} size={size} color={color} />;
-      //   },
-      //   tabBarActiveTintColor: 'tomato',
-      //   tabBarInactiveTintColor: 'gray',
-      // })}
       >
         <Tab.Screen
           name="Home"
