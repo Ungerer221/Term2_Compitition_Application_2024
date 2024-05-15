@@ -1,18 +1,18 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, TextInput,StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function PasswordInputField() {
-    const [text, onChangeText] = React.useState('');
-    return (
-        <View style={styles.container}>
+export default function UserNameInput() {
+    const [text, onChangeText] = React.useState('hey');
+  return (
+    <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder='password'
+                placeholder='username'
                 onChangeText={onChangeText}
                 value={text}
             />
         </View>
-    )
+  )
 }
 const styles = StyleSheet.create({
     container:{
@@ -27,5 +27,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 20,
         borderRadius:12,
+        justifyContent:'flex-start',
+        alignItems:'center',
     },
 })

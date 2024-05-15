@@ -9,6 +9,8 @@ import HomeScreen from './screens/homeScreen';
 import ProfileScreen from './screens/profileScreen';
 import GameScreen from './screens/gameScreen';
 import NewsScreen from './screens/newsScreen';
+import SignUpScreen from './screens/signUpScreen';
+import LoginFormScreen from './screens/loginFormScreen';
 // views
 import TopNavBar from './views/topNavBar';
 // Navigation
@@ -21,7 +23,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SignUpScreen from './screens/signUpScreen';
 // IMPORT ENDS ----------------------------------------------------------------------------------------------------------------------------
 
 // * Tab navigator ------------------------------------------------------------------------------------------------------------------------
@@ -205,6 +206,17 @@ export default function App() {
           component={SignUpScreen}
           options={{
             tabBarLabel: 'Signup',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
+            ),
+            tabBarActiveTintColor: '#F65774',
+          }}
+        />
+        <Tab.Screen
+          name="Login"
+          component={LoginFormScreen}
+          options={{
+            tabBarLabel: 'Login',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="newspaper-variant-outline" color={color} size={size} />
             ),
