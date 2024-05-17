@@ -25,6 +25,11 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // IMPORT ENDS ----------------------------------------------------------------------------------------------------------------------------
 
+// todo : Make a splash screen and have it working
+// todo : better your react navigation
+// todo : figure out nesting for navigation and then stack navigation
+// todo : add back buttons 
+
 // * Tab navigator ------------------------------------------------------------------------------------------------------------------------
 const Tab = createBottomTabNavigator();
 function TabNavigator() {
