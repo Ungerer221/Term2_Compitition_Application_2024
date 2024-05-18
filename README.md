@@ -194,3 +194,9 @@ remember to capitalise
     <Path d="M13.6267 12.9186C13.4105 12.1205 12.3101 11.4003 10.9892 11.9391C9.66829 12.4778 9.45847 14.2113 11.4565 14.3955C12.3595 14.4787 12.9483 14.2989 13.4873 14.8076C14.0264 15.3162 14.1265 16.7308 12.7485 17.112C11.3705 17.4932 10.006 16.8976 9.85742 16.0517M11.8417 10.9927V11.7531M11.8417 17.2293V17.9927" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 </Svg>
 ```
+
+## To set Up Navgation 
+
+This is the video that helped me sort out my navigation issues with using bothe stack and tab navigation
+
+https://www.youtube.com/watch?v=s7ackFpN-GU&t=18s 
