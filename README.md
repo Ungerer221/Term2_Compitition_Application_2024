@@ -200,3 +200,11 @@ remember to capitalise
 This is the video that helped me sort out my navigation issues with using bothe stack and tab navigation
 
 https://www.youtube.com/watch?v=s7ackFpN-GU&t=18s 
+
+## Drag 'n Drop Function
+docs to a drac an drop method
+
+https://gist.github.com/himanshu717171/b70794816b36b1de41d8dd679e17aba5 
+
+A Blog
+https://blog.reactnativecoach.com/creating-draggable-component-with-react-native-132d30c27cb0

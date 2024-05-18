@@ -31,7 +31,6 @@ export default function FarmPlantingSpaceView() {
             <View style={styles.farmPlantPlot}>
                 <Text>9</Text>
             </View>
-            
         </View>
     )
 }
