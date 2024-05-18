@@ -1,87 +1,66 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, KeyboardAvoidingView,Platform,Keyboard, } from 'react-native'
+import React, { useState } from 'react'
 // View
 import TopNavBar from '../views/topNavBar';
 // components
 import EmailInputField from '../components/emailInputField';
 import PasswordInputField from '../components/passwordInputField';
 // fireBase
-// import { initializeApp } from "firebase/app";
-// firebase Auth Imports
-import {
-    getAuth,
-    signInWithEmailAndPassword,
-    onAuthStateChanged
-} from "firebase/auth";
-
-// Your web app's Firebase configuration
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDDhncQ-zmbOgwkcUqlwDHExKCLGCQIM-Q",
-//     authDomain: "class-work-c5bee.firebaseapp.com",
-//     projectId: "class-work-c5bee",
-//     storageBucket: "class-work-c5bee.appspot.com",
-//     messagingSenderId: "156765701708",
-//     appId: "1:156765701708:web:d543605b3a4218c9d5d6e9"
-// };
-// initializing your app
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-// signInWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//   });
-
-const loginEmailPassword = async () => {
-    const loginEmail = txtEmail.value;
-    const loginPassword = txtPassword.value
-
-    const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(userCredential.user);
-}
-
+import { handleLogin } from '../services/authService';
 
 export default function LoginFormScreen({ navigation }) {
-    const [text, onChangeText] = React.useState('');
-    return (
-        <View style={styles.container}>
-            <TopNavBar />
-            <Text style={styles.loginHeadingText}>Login</Text>
-            <Text>If you dont have an account please feel free to register</Text>
-            <Image
-                style={styles.backGroundImage}
-                source={require('../assets/44.png')}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder='password'
-                onChangeText={onChangeText}
-                value={text}
-            />
-            <View style={styles.formCon}>
-                <EmailInputField />
-                <PasswordInputField />
-                {/* submit button  */}
-                <TouchableOpacity
-                    style={styles.loginButton}
-                    onPress={() => { }}
-                >
-                    <Text style={styles.loginButtonText}>Login</Text>
-                </TouchableOpacity>
+    // const [text, onChangeText] = React.useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-                <TouchableOpacity
-                    style={styles.navSignupButton}
-                    onPress={() => navigation.navigate('Signup')}
-                >
-                    <Text style={styles.loginButtonText}>Want to signUp</Text>
-                </TouchableOpacity>
+    const login = () => { handleLogin(email, password) }
+
+    return (
+            <View style={styles.container}>
+                <TopNavBar />
+                <Text style={styles.loginHeadingText}>Login</Text>
+                <Text>If you dont have an account please feel free to register</Text>
+                <Image
+                    style={styles.backGroundImage}
+                    source={require('../assets/44.png')}
+                />
+                {/* input field con */}
+                <View style={styles.formCon}>
+
+                    {/* //* email */}
+                    <TextInput
+                        style={styles.input}
+                        placeholder='email'
+                        onChangeText={newText => setEmail(newText)}
+                        value={email}
+                    />
+                    {/* //* pass word field */}
+                    <TextInput
+                        style={styles.input}
+                        placeholder='password'
+                        onChangeText={newText => setPassword(newText)}
+                        value={password}
+                    />
+
+                    {/* //* submit button  */}
+                    <TouchableOpacity style={styles.loginButton} onPress={login}>
+                        <Text style={styles.loginButtonText}>Login</Text>
+                    </TouchableOpacity>
+                    {/* //* signUp button  */}
+                    <TouchableOpacity
+                        style={styles.navSignupButton}
+                        onPress={() => navigation.navigate('Signup')}
+                    >
+                        <Text style={styles.loginButtonText}>Want to signUp</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.navSignupButton}
+                        onPress={() => navigation.navigate('Home')}
+                    >
+                        <Text style={styles.loginButtonText}>home</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -133,5 +112,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 250,
         // backgroundColor:'red',
+    },
+    input: {
+        width: '100%',
+        margin: 12,
+        borderWidth: 1,
+        padding: 20,
+        borderRadius: 12,
     },
 });

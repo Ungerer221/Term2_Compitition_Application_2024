@@ -17,6 +17,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TractorIcon32 from '../icons/tractor-stroke-rounded.jsx';
 // import { Home01Icon } from '@hugeicons/react-native-pro';
 import { Home01Icon } from '../icons/HomeIcon.jsx';
+import { TabNavigator } from './homeTabNav/homeTabNav.js';
 // import { showErrorCSS } from 'react-native-svg/lib/typescript/deprecated.js';
 // images
 
@@ -32,7 +33,7 @@ export default function HomeScreen({ navigation }) {
                 <TopNavBar></TopNavBar>
                 {/* <Text style={styles.homeIntroTitleText}>Welcome</Text> */}
                 <LeaderBoardView></LeaderBoardView>
-                <EnrollCompView/>
+                <EnrollCompView />
                 {/* <Text style={styles.heading01}>your total score</Text> */}
                 <View style={styles.home02Con}>
                     {/* <TotalScoreTile></TotalScoreTile> */}
@@ -87,9 +88,9 @@ const styles = StyleSheet.create({
         paddingBottom: 40,
         gap: 20,
     },
-    homeIntroTitleText:{
-        fontWeight:'700',
-        fontSize:32,
+    homeIntroTitleText: {
+        fontWeight: '700',
+        fontSize: 32,
     },
     home02Con: {
         flex: 0,
@@ -159,10 +160,10 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: -10,
     },
-    gameNavBTN:{
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
-        zIndex:5,
+    gameNavBTN: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 5,
     }
 });

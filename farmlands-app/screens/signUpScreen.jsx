@@ -3,28 +3,22 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'reac
 import React, { useState } from 'react';
 // views
 import TopNavBar from '../views/topNavBar';
-// firebase
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 // componenets
 import PasswordInputField from '../components/passwordInputField';
 import EmailInputField from '../components/emailInputField';
 import UserNameInput from '../components/userNameInput';
+// firebase
+import { handleSignup } from '../services/signupService';
 
 // todo : make the sign up screen part of the drawer navigation for the menu button
-export default function SignUpScreen() {
+export default function SignUpScreen({ navigation }) {
 
-    // const auth = getAuth();
-    // createUserWithEmailAndPassword(auth, email, password)
-    //     .then((userCredential) => {
-    //         // Signed up 
-    //         const user = userCredential.user;
-    //         // ...
-    //     })
-    //     .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //         // ..
-    //     });
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signUp = () => { handleSignup(email, password) }
 
     return (
         <View style={styles.container}>
@@ -36,23 +30,41 @@ export default function SignUpScreen() {
                 source={require('../assets/54.png')}
             />
             <View style={styles.formCon}>
-                <UserNameInput />
-                <EmailInputField />
-                <PasswordInputField />
+                {/* //* username */}
+                <TextInput
+                    style={styles.input}
+                    placeholder='Username'
+                    onChangeText={newText => setUsername(newText)}
+                    value={username}
+                />
+                {/* //* email */}
+                <TextInput
+                    style={styles.input}
+                    placeholder='email'
+                    onChangeText={newText => setEmail(newText)}
+                    value={email}
+                />
+                {/* //* pass word field */}
+                <TextInput
+                    style={styles.input}
+                    placeholder='password'
+                    onChangeText={newText => setPassword(newText)}
+                    value={password}
+                />
                 <View style={styles.buttonContainer}>
                     {/* submit button  */}
                     <TouchableOpacity
                         style={styles.signUpButton}
-                        onPress={() => { }}
+                        onPress={signUp}
                     >
                         <Text style={styles.signUpButtonText}>SignUp</Text>
                     </TouchableOpacity>
                     {/* link to login */}
                     <TouchableOpacity
                         style={styles.navSignupButton}
-                        onPress={() => navigation.navigate('Signup')}
+                        onPress={() => navigation.navigate('Login')}
                     >
-                        <Text style={styles.loginButtonText}>Want to signUp</Text>
+                        <Text style={styles.loginButtonText}>Login</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -76,11 +88,11 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     input: {
-        height: 40,
         width: '100%',
         margin: 12,
         borderWidth: 1,
-        padding: 10,
+        padding: 20,
+        borderRadius: 12,
     },
     formCon: {
         width: '100%',
@@ -91,11 +103,11 @@ const styles = StyleSheet.create({
         // backgroundColor:'red',
         // gap:10,
     },
-    buttonContainer:{
+    buttonContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        width:'100%',
-        gap:10,
+        width: '100%',
+        gap: 10,
     },
     signUpButton: {
         width: '100%',
