@@ -3,7 +3,7 @@ import 'react-native-gesture-handler';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //Screen Imports
 import HomeScreen from './screens/homeScreen';
@@ -21,6 +21,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getHeaderTitle } from '@react-navigation/elements';
 import { MyStack } from './screens/navigation';
+import { MyTab } from './screens/navigation'
 
 // * keep eye on this
 import { createStackNavigator } from '@react-navigation/stack';
@@ -29,6 +30,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './config/firebase';
 // IMPORT ENDS ----------------------------------------------------------------------------------------------------------------------------
 
 // todo : Make a splash screen and have it working
@@ -54,9 +57,33 @@ export default function App() {
   const [statusBarTransition, setStatusBarTransition] = useState(
     TRANSITIONS[0],
   );
+
+  const [loggedIn, SetLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        SetLoggedIn(true)
+        console.log("user Logged in... " + user.email)
+      } else {
+        SetLoggedIn(false)
+        console.log("no user logged in...")
+      }
+    })
+    return unsubscribe
+  })
   // the return ---------------------------------------------------------------------------------------------------------------------------
   return (
-    <MyStack></MyStack>
+    <>
+      {/* <MyStack></MyStack> */}
+      {/* if you want free roam reamember to remove the navigation container for MyTab  and uncomment the mystack*/}
+      {/* the logic used so that if the person is logged in they go straight to the home page */}
+      {loggedIn ? (
+        <MyTab />
+      ) : (
+        <MyStack />
+      )}
+    </>
   )
 }
 

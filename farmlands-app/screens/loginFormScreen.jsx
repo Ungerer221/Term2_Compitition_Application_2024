@@ -51,14 +51,14 @@ export default function LoginFormScreen({ navigation }) {
                         style={styles.navSignupButton}
                         onPress={() => navigation.navigate('Signup')}
                     >
-                        <Text style={styles.loginButtonText}>Want to signUp</Text>
+                        <Text style={styles.loginButtonText}>Create an account</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.navSignupButton}
                         onPress={() => navigation.navigate('Home')}
                     >
                         <Text style={styles.loginButtonText}>home</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </View>
     )
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     },
     navSignupButton: {
         width: '50%',
-        backgroundColor: '#E6BE27',
+        backgroundColor: '#FFD166',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,

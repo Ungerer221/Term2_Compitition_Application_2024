@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ImageBackground, Button } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Button, TouchableOpacity } from 'react-native'
 import React from 'react'
 // SVG
 import Svg, {
@@ -12,12 +12,20 @@ import TopNavBar from '../views/topNavBar';
 // icosn
 import Home05Icon from '../icons/HomeIcon';
 import Alert02Icon32 from '../icons/alert-02-stroke-rounded';
+// import { handleSignup } from '../services/signupService';
 
-export default function NewsScreen({navigation}) {
+import { handleSignout } from '../services/authService';
+import { signOut } from 'firebase/auth';
+
+export default function NewsScreen({ navigation }) {
+  const signout = () => { handleSignout() }
   return (
     <View style={styles.container}>
+
       <TopNavBar />
+
       <Text>newsScreen</Text>
+
       {/* caution banner  */}
       <View style={styles.cautionBannerCon}>
         <View style={styles.cautionBannerRow}>
@@ -26,11 +34,13 @@ export default function NewsScreen({navigation}) {
           <Alert02Icon32 />
         </View>
         <Text style={styles.cautionBannerMainText}>this app is still in development</Text>
+
         <View style={styles.cautionBannerRow}>
           <Alert02Icon32 />
           <Text style={styles.cautionBannerRowText}>Caution</Text>
           <Alert02Icon32 />
         </View>
+
         <ImageBackground source={require('../assets/cautionIll.png')} resizeMode="cover" style={styles.cautionBackgroundImage} />
 
       </View>
@@ -43,8 +53,13 @@ export default function NewsScreen({navigation}) {
       </Svg> */}
       <Button
         title="SignUp"
-        onPress={() => navigation.navigate('Signup')}
+      // onPress={() => navigation.navigate('Signup')}
       />
+      <TouchableOpacity style={styles.loginButton}
+      // onPress={signout}
+      >
+        <Text style={styles.loginButtonText}>SignOut Test</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -93,5 +108,13 @@ const styles = StyleSheet.create({
     left: 12,
     zIndex: -5,
     opacity: 0.7,
-  }
+  },
+  loginButton: {
+    // width: '100%',
+    backgroundColor: '#41A8BB',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    borderRadius: 22,
+},
 });

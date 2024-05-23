@@ -17,8 +17,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyTab() {
+export function MyTab() {
   return (
+    <NavigationContainer>
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{ headerShown: false }}
@@ -69,6 +70,7 @@ function MyTab() {
       />
       {/* <Tab.Screen /> */}
     </Tab.Navigator>
+    </NavigationContainer>
   )
 }
 
